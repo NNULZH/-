@@ -26,10 +26,7 @@
 
 令参数 \(\theta\) = 袋子中红球的比例，观测到 \(k\) 次红球、\(n-k\) 次蓝球：
 
-\[
-L(\theta) \;=\; P(\text{观测到 }k\text{ 红},\,n-k\text{ 蓝}\mid \theta)
-\;=\;\theta^k \,(1-\theta)^{\,n-k}
-\]
+L(θ) = θ^k * (1 − θ)^(n − k)
 
 我们就可以在不同 \(\theta\) 值上比较，找出“使观测结果最合理”的那个 \(\theta\)。
 
@@ -45,44 +42,24 @@ L(\theta) \;=\; P(\text{观测到 }k\text{ 红},\,n-k\text{ 蓝}\mid \theta)
 ## 二、模型假设
 
 - 定义模型输出：  
-  \[
-  h_\theta(x) \;=\; P(y=1\mid x;\theta)
-  \;=\;\sigma(\theta^T x)
-  \;=\;\frac{1}{1+e^{-\theta^T x}}
-  \]
+h_theta(x) = P(y=1 | x; theta) = 1 / (1 + exp(− theta^T x))
 - 如果 \(y=1\)，它的预测概率就是 \(h_\theta(x)\)；如果 \(y=0\)，预测概率就是 \(1 - h_\theta(x)\)。
 
 ## 三、写出似然函数
 
 单个样本 \((x^{(i)},y^{(i)})\) 的似然：
 
-\[
-P\bigl(y^{(i)}\mid x^{(i)};\theta\bigr)
-=\bigl[h_\theta(x^{(i)})\bigr]^{y^{(i)}}
-\bigl[1 - h_\theta(x^{(i)})\bigr]^{1 - y^{(i)}}
-\]
+P(y^(i) | x^(i); theta) = [h_theta(x^(i))]^(y^(i)) * [1 − h_theta(x^(i))]^(1 − y^(i))
 
 全数据集的似然函数：
 
-\[
-L(\theta)
-=\prod_{i=1}^m
-\bigl[h_\theta(x^{(i)})\bigr]^{y^{(i)}}
-\bigl[1 - h_\theta(x^{(i)})\bigr]^{1 - y^{(i)}}
-\]
+L(theta) = product over i=1 to m of { [h_theta(x^(i))]^(y^(i)) * [1 − h_theta(x^(i))]^(1 − y^(i)) }
 
 ## 四、对数似然（Log-Likelihood）
 
 取对数简化乘积：
 
-\[
-\ell(\theta)
-= \log L(\theta)
-= \sum_{i=1}^m \Bigl[
-    y^{(i)}\log h_\theta(x^{(i)})
-  + (1 - y^{(i)})\log\bigl(1 - h_\theta(x^{(i)})\bigr)
-  \Bigr]
-\]
+ell(theta) = log L(theta) = sum over i=1 to m of { y^(i) * log(h_theta(x^(i))) + (1 − y^(i)) * log(1 − h_theta(x^(i))) }
 
 ## 五、最大化对数似然
 
