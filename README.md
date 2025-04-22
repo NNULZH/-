@@ -73,17 +73,21 @@ L(\theta)
 
 取对数简化乘积：
 
-$$\[
+$$
+\[
 \ell(\theta)
 = \log L(\theta)
 = \sum_{i=1}^m \Bigl[
-    y^{(i)}\log h_\theta(x^{(i)})
-  + (1 - y^{(i)})\log\bigl(1 - h_\theta(x^{(i)})\bigr)
-  \Bigr] \]$$
-
+    y^{(i)}\log h_\theta(x^{(i)})$$
+    
+  + $$(1 - y^{(i)})\log\bigl(1 - h_\theta(x^{(i)})\bigr)
+  \Bigr]
+\]
+$$
 ## 五、最大化对数似然
 
-- 目标：$$\(\displaystyle \hat\theta = \arg\max_\theta \,\ell(\theta)\)$$。  
+- 目标：
+- $$\(\displaystyle \hat\theta = \arg\max_\theta \,\ell(\theta)\)。$$  
 - 通常使用梯度下降或其他数值优化方法来求解最优 \(\theta\)。
 
 ---
