@@ -84,7 +84,7 @@ $$\[
 
 ## 五、最大化对数似然
 
-- 目标：\(\displaystyle \hat\theta = \arg\max_\theta \,\ell(\theta)\)。  
+- 目标：$$\(\displaystyle \hat\theta = \arg\max_\theta \,\ell(\theta)\)。  
 - 通常使用梯度下降或其他数值优化方法来求解最优 \(\theta\)。
 
 ---
